@@ -11,7 +11,6 @@ const int MaxSpriteFrame = 11;
 const int FrameDelay = 2;
 
 int BackgroundX = 0;
-int BatX = 0;
 
 SDL_Surface* LoadImage(char* fileName);
 bool LoadFiles();
@@ -60,18 +59,10 @@ int main(int argc, char* args[])
         //if(BackgroundX <= -800)
         //    BackgroundX = 0;
 
-        //Update's Background scrolling
-        BatX+=3;
-        if(BatX >= (800-32))
-            BatX = 0;
-
-
-
-
         //Render the scene
         DrawImage(Background,Backbuffer, BackgroundX, 0);
         DrawImage(Background,Backbuffer, BackgroundX+800, 0);
-        DrawImageFrame(SpriteImage, Backbuffer, BatX,250, 32, 32, SpriteFrame);
+        DrawImageFrame(SpriteImage, Backbuffer, 350,250, 150, 120, SpriteFrame);
 
         SDL_Delay(20);
         SDL_Flip(Backbuffer);
@@ -98,7 +89,7 @@ SDL_Surface* LoadImage(char* fileName)
 
         if(processedImage != NULL)
         {
-            Uint32 colorKey = SDL_MapRGB(processedImage->format, 0xFF, 0xFF, 0xFF);
+            Uint32 colorKey = SDL_MapRGB(processedImage->format, 0xFF, 0, 0xFF);
             SDL_SetColorKey(processedImage, SDL_SRCCOLORKEY, colorKey);
         }
 
