@@ -1,8 +1,8 @@
 #include <SDL/SDL.h>
 
-SDL_Surface* Background = NULL;
-SDL_Surface* SpriteImage = NULL;
-SDL_Surface* Backbuffer = NULL;
+SDL_Surface* spriteBackground = NULL;
+SDL_Surface* spriteImage = NULL;
+SDL_Surface* backbuffer = NULL;
 
 int SpriteX = 350;
 int SpriteY = 250;
@@ -17,12 +17,12 @@ int SpriteY = 250;
 int dirX = 0;
 int dirY = 0;
 
-bool LoadFiles();
-void FreeFiles();
+bool loadFiles();
+void freeFiles();
 
-SDL_Surface* LoadImage(char* fileName);
-void DrawImage(SDL_Surface* image, SDL_Surface* destSurface, int x, int y);
-bool ProgramIsRunning();
+SDL_Surface* loadImage(char* fileName);
+void drawImage(SDL_Surface* image, SDL_Surface* destSurface, int x, int y);
+bool programIsRunning();
 void moveShape();
 
 int main(int argc, char* args[])
@@ -30,18 +30,18 @@ int main(int argc, char* args[])
     if(SDL_Init(SDL_INIT_EVERYTHING) < 0)
         return false;
 
-    Backbuffer = SDL_SetVideoMode(800, 600, 32, SDL_SWSURFACE);
+    backbuffer = SDL_SetVideoMode(800, 600, 32, SDL_SWSURFACE);
 
     SDL_WM_SetCaption("I was going to use a spaceship but I like richard stallman more", NULL);
 
-    if(!LoadFiles())
+    if(!loadFiles())
     {
-        FreeFiles();
+        freeFiles();
         SDL_Quit();
         return 0;
     }
 
-    while(ProgramIsRunning())
+    while(programIsRunning())
     {
         //Handle Input
         Uint8* keys = SDL_GetKeyState(NULL);
@@ -68,21 +68,21 @@ int main(int argc, char* args[])
 
         moveShape();
 
-        DrawImage(Background,Backbuffer, 0, 0);
-        DrawImage(SpriteImage, Backbuffer, SpriteX, SpriteY);
+        drawImage(spriteBackground,backbuffer, 0, 0);
+        drawImage(spriteImage, backbuffer, SpriteX, SpriteY);
 
         SDL_Delay(20);
-        SDL_Flip(Backbuffer);
+        SDL_Flip(backbuffer);
     }
 
-    FreeFiles();
+    freeFiles();
 
     SDL_Quit();
 
     return 1;
 }
 
-SDL_Surface* LoadImage(char* fileName)
+SDL_Surface* loadImage(char* fileName)
 {
     SDL_Surface* imageLoaded = NULL;
     SDL_Surface* processedImage = NULL;
@@ -105,7 +105,7 @@ SDL_Surface* LoadImage(char* fileName)
     return processedImage;
 }
 
-void DrawImage(SDL_Surface* image, SDL_Surface* destSurface, int x, int y)
+void drawImage(SDL_Surface* image, SDL_Surface* destSurface, int x, int y)
 {
     SDL_Rect destRect;
     destRect.x = x;
@@ -114,7 +114,7 @@ void DrawImage(SDL_Surface* image, SDL_Surface* destSurface, int x, int y)
     SDL_BlitSurface( image, NULL, destSurface, &destRect);
 }
 
-bool ProgramIsRunning()
+bool programIsRunning()
 {
     SDL_Event event;
 
@@ -129,34 +129,34 @@ bool ProgramIsRunning()
     return running;
 }
 
-bool LoadFiles()
+bool loadFiles()
 {
-    SpriteImage = LoadImage("graphics/free.bmp");
+    spriteImage = loadImage("graphics/free.bmp");
 
-    if(SpriteImage == NULL)
+    if(spriteImage == NULL)
         return false;
 
-    Background = LoadImage("graphics/background.bmp");
+    spriteBackground = loadImage("graphics/background.bmp");
 
-    if(Background == NULL)
+    if(spriteBackground == NULL)
         return false;
 
     return true;
 
 }
 
-void FreeFiles()
+void freeFiles()
 {
-    if(SpriteImage != NULL)
+    if(spriteImage != NULL)
     {
-        SDL_FreeSurface(SpriteImage);
-        SpriteImage = NULL;
+        SDL_FreeSurface(spriteImage);
+        spriteImage = NULL;
     }
 
-    if(Background != NULL)
+    if(spriteBackground != NULL)
     {
-        SDL_FreeSurface(Background);
-        Background = NULL;
+        SDL_FreeSurface(spriteBackground);
+        spriteBackground = NULL;
     }
 }
 
