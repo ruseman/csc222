@@ -5,42 +5,42 @@
 #define null NULL
 
 //Game constants
-const int SCREEN_WIDTH = 800;
-const int SCREEN_HEIGHT = 600;
+#define SCREEN_WIDTH (800)
+#define SCREEN_HEIGHT 600
 
-const int PADDLE_WIDTH = 20;
-const int PADDLE_HEIGHT = 100;
-const int BALL_WIDTH = 20;
-const int BALL_HEIGHT = 20;
-const int BALL_MAX_SPEED = 20;
+#define PADDLE_WIDTH (20)
+#define PADDLE_HEIGHT (100)
+#define BALL_WIDTH (20)
+#define BALL_HEIGHT (20)
+#define BALL_MAX_SPEED (20)
 
-const int PLAYER_PADDLE_X = PADDLE_WIDTH;
-const int ENEMY_PADDLE_X = SCREEN_WIDTH - PADDLE_WIDTH*2;
+#define PLAYER_PADDLE_X (PADDLE_WIDTH)
+#define ENEMY_PADDLE_X (SCREEN_WIDTH - PADDLE_WIDTH*2)
 
-const int PLAYER_SPEED = 10;
-const int ENEMY_SPEED = 7;
+#define PLAYER_SPEED (10)
+#define ENEMY_SPEED (7)
 
-const int FPS = 30;
-const int FRAME_DELAY = 1000/FPS;
+#define FPS (30)
+#define FRAME_DELAY (1000/FPS)
 
 //Surfaces
-SDL_Surface *Backbuffer = NULL;
-SDL_Surface *BackgroundImage = NULL;
-SDL_Surface *BallImage = NULL;
-SDL_Surface *PlayerPaddleImage = NULL;
-SDL_Surface *EnemyPaddleImage = NULL;
+SDL_Surface *Backbuffer = null;
+SDL_Surface *BackgroundImage = null;
+SDL_Surface *BallImage = null;
+SDL_Surface *PlayerPaddleImage = null;
+SDL_Surface *EnemyPaddleImage = null;
 
 //Font
-TTF_Font *GameFont = NULL;
+TTF_Font *GameFont = null;
 
 //Sounds
-Mix_Chunk *BallBounceSound = NULL;
-Mix_Chunk *BallSpawnSound = NULL;
-Mix_Chunk *PlayerScoreSound = NULL;
-Mix_Chunk *EnemyScoreSound = NULL;
+Mix_Chunk *BallBounceSound = null;
+Mix_Chunk *BallSpawnSound = null;
+Mix_Chunk *PlayerScoreSound = null;
+Mix_Chunk *EnemyScoreSound = null;
 
 //Music
-Mix_Music *GameMusic = NULL;
+Mix_Music *GameMusic = null;
 
 //Game Variables
 int PlayerScore;
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
     while(ProgramIsRunning())
     {
         long int oldTime = SDL_GetTicks();  //We will use this later to see how long it took to update the frame
-        SDL_FillRect(Backbuffer, NULL, 0);  //Clear the screen
+        SDL_FillRect(Backbuffer, null, 0);  //Clear the screen
         RunGame();                          //Update the game
         DrawGame();                         //Draw the screen
 
@@ -99,17 +99,17 @@ int main(int argc, char *argv[])
 
 SDL_Surface* LoadImage(char* fileName)
 {
-    SDL_Surface* imageLoaded = NULL;
-    SDL_Surface* processedImage = NULL;
+    SDL_Surface* imageLoaded = null;
+    SDL_Surface* processedImage = null;
 
     imageLoaded = SDL_LoadBMP(fileName);
 
-    if(imageLoaded != NULL)
+    if(imageLoaded != null)
     {
         processedImage = SDL_DisplayFormat(imageLoaded);
         SDL_FreeSurface(imageLoaded);
 
-        if( processedImage != NULL )
+        if( processedImage != null )
         {
             Uint32 colorKey = SDL_MapRGB( processedImage->format, 0xFF, 0, 0xFF );
             SDL_SetColorKey( processedImage, SDL_SRCCOLORKEY, colorKey );
@@ -126,12 +126,12 @@ void DrawImage(SDL_Surface* image, SDL_Surface* destSurface, int x, int y)
     destRect.x = x;
     destRect.y = y;
 
-    SDL_BlitSurface( image, NULL, destSurface, &destRect);
+    SDL_BlitSurface( image, null, destSurface, &destRect);
 }
 
 void DrawText(SDL_Surface* surface, char* string, int x, int y, TTF_Font* font, Uint8 r, Uint8 g, Uint8 b)
 {
-    SDL_Surface* renderedText = NULL;
+    SDL_Surface* renderedText = null;
 
     SDL_Color color;
 
@@ -146,7 +146,7 @@ void DrawText(SDL_Surface* surface, char* string, int x, int y, TTF_Font* font, 
     pos.x = x;
     pos.y = y;
 
-    SDL_BlitSurface( renderedText, NULL, surface, &pos );
+    SDL_BlitSurface( renderedText, null, surface, &pos );
     SDL_FreeSurface(renderedText);
 }
 
@@ -182,20 +182,20 @@ bool LoadFiles()
     EnemyPaddleImage = LoadImage("graphics/enemy.bmp");
 
     //Error checking images
-    if(BackgroundImage == NULL)
+    if(BackgroundImage == null)
         return false;
-    if(BallImage == NULL)
+    if(BallImage == null)
         return false;
-    if(PlayerPaddleImage == NULL)
+    if(PlayerPaddleImage == null)
         return false;
-    if(EnemyPaddleImage == NULL)
+    if(EnemyPaddleImage == null)
         return false;
 
     //Load font
     GameFont = TTF_OpenFont("graphics/alfphabet.ttf", 30);
 
     //Error check font
-    if(GameFont == NULL)
+    if(GameFont == null)
         return false;
 
     //Load sounds
@@ -205,20 +205,20 @@ bool LoadFiles()
     EnemyScoreSound = Mix_LoadWAV("audio/enemyScore.wav");
 
     //Error check sounds
-    if(BallBounceSound == NULL)
+    if(BallBounceSound == null)
         return false;
-    if(BallSpawnSound == NULL)
+    if(BallSpawnSound == null)
         return false;
-    if(PlayerScoreSound == NULL)
+    if(PlayerScoreSound == null)
         return false;
-    if(EnemyScoreSound == NULL)
+    if(EnemyScoreSound == null)
         return false;
 
     //Load music
     GameMusic = Mix_LoadMUS("audio/song.mp3");
 
     //Error check music
-    if(GameMusic == NULL)
+    if(GameMusic == null)
         return false;
 
     return true;
@@ -283,7 +283,7 @@ bool InitSDL()
     Backbuffer = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, 32, SDL_SWSURFACE );
 
     //Error check Backbuffer
-    if(Backbuffer == NULL)
+    if(Backbuffer == null)
         return false;
 
     return true;
@@ -337,7 +337,7 @@ bool InitGame()
     //Initiatialize game variables
 
     //Set the title
-    SDL_WM_SetCaption("Paddle Game!",NULL);
+    SDL_WM_SetCaption("Paddle Game!",null);
 
     //Set scores to 0
     PlayerScore = 0;
@@ -354,7 +354,7 @@ bool InitGame()
 
 void UpdatePlayer()
 {
-    Uint8 *keys = SDL_GetKeyState(NULL);
+    Uint8 *keys = SDL_GetKeyState(null);
 
     //Move the paddle when the up/down key is pressed
     if(keys[SDLK_UP])

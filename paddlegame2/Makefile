@@ -1,10 +1,10 @@
 CC=cc
-CFLAGS=`sdl-config --cflags`
-LFLAGS=
+CFLAGS= -ansi `sdl-config --cflags`
+LFLAGS=-lSDL_mixer -lSDL_ttf -lSDL
 
 all: bin/main
 bin/main: bin object/main.o
-	$(CC) -o bin/main object/main.o `sdl-config --libs` -lSDL_mixer -lSDL_ttf
+	$(CC) -o bin/main object/main.o $(CFLAGS) `sdl-config --libs` $(LFLAGS)
 object/main.o: object main.cpp
 	$(CC) -c $(CFLAGS) main.cpp -o object/main.o
 bin:
