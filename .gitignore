@@ -4,3 +4,4 @@
 bin/
 object/
 *.o
+.recommenders/
