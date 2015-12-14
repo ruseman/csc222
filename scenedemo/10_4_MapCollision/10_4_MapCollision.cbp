@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="10_4_MapCollision" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="10_4_MapCollision" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="10_4_MapCollision" prefix_auto="1" extension_auto="1" />
+				<Option object_output="C:\Users\Toshiba\Desktop\Book Projects\Book1\Files\Chapter_10\10_4_MapCollision\.objs" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="Core\Audio.cpp" />
+		<Unit filename="Core\Audio.h" />
+		<Unit filename="Core\Game.cpp" />
+		<Unit filename="Core\Game.h" />
+		<Unit filename="Core\Graphics.cpp" />
+		<Unit filename="Core\Graphics.h" />
+		<Unit filename="Core\Image.cpp" />
+		<Unit filename="Core\Image.h" />
+		<Unit filename="Core\Input.cpp" />
+		<Unit filename="Core\Input.h" />
+		<Unit filename="Core\Music.cpp" />
+		<Unit filename="Core\Music.h" />
+		<Unit filename="Core\RasterFont.cpp" />
+		<Unit filename="Core\RasterFont.h" />
+		<Unit filename="Core\Sound.cpp" />
+		<Unit filename="Core\Sound.h" />
+		<Unit filename="Map.cpp" />
+		<Unit filename="Map.h" />
+		<Unit filename="MapNode.cpp" />
+		<Unit filename="MapNode.h" />
+		<Unit filename="Rectangle.cpp" />
+		<Unit filename="Rectangle.h" />
+		<Unit filename="Scene.cpp" />
+		<Unit filename="Scene.h" />
+		<Unit filename="SceneDemo.cpp" />
+		<Unit filename="SceneDemo.h" />
+		<Unit filename="SceneNode.cpp" />
+		<Unit filename="SceneNode.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

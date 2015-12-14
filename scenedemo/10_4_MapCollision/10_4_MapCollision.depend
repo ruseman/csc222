@@ -1,0 +1,104 @@
+# depslib dependency file v1.0
+1328311429 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\audio.cpp
+	"Audio.h"
+
+1328311429 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\audio.h
+	<SDL\SDL.h>
+	<SDL\SDL_mixer.h>
+
+1344068335 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\game.cpp
+	"Game.h"
+
+1336866479 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\game.h
+	<SDL\SDL_ttf.h>
+	"Graphics.h"
+	"Input.h"
+	"Audio.h"
+
+1327712595 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\graphics.h
+	<SDL\SDL.h>
+
+1328153952 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\input.h
+	<SDL/SDL.h>
+
+1343523973 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\graphics.cpp
+	"Graphics.h"
+
+1336866858 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\image.cpp
+	"Image.h"
+
+1336866851 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\image.h
+	"Graphics.h"
+
+1328154040 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\input.cpp
+	"Input.h"
+
+1328314065 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\music.cpp
+	"Music.h"
+
+1328313667 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\music.h
+	"Audio.h"
+
+1343526178 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\rasterfont.cpp
+	"RasterFont.h"
+
+1343526178 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\rasterfont.h
+	"Image.h"
+
+1328311470 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\sound.cpp
+	"Sound.h"
+
+1328313667 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\core\sound.h
+	"Audio.h"
+
+1345609922 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\map.cpp
+	"Map.h"
+
+1345609207 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\map.h
+	"Core/Graphics.h"
+	"Core/Image.h"
+	<fstream>
+	<vector>
+
+1345688325 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\mapnode.cpp
+	"MapNode.h"
+
+1345687349 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\mapnode.h
+	"Map.h"
+	"SceneNode.h"
+
+1336873315 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\scenenode.h
+	"Core/Graphics.h"
+	"Scene.h"
+	"Rectangle.h"
+
+1336873266 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\scene.h
+	<list>
+	"SceneNode.h"
+	"Rectangle.h"
+
+1345609543 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\rectangle.h
+
+1345609566 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\rectangle.cpp
+	"Rectangle.h"
+
+1336873266 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\scene.cpp
+	"Scene.h"
+
+1345687592 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\scenedemo.cpp
+	"SceneDemo.h"
+
+1345687421 c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\scenedemo.h
+	"Core/Game.h"
+	"Core/Image.h"
+	"Scene.h"
+	"Rectangle.h"
+	"Map.h"
+	"MapNode.h"
+
+1336873323 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\scenenode.cpp
+	"SceneNode.h"
+
+1332027969 source:c:\users\toshiba\desktop\book projects\book1\files\chapter_10\10_4_mapcollision\main.cpp
+	"SceneDemo.h"
+
